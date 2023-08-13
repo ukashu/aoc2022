@@ -22,7 +22,7 @@ func main() {
 	check(err)
 	defer file.Close()
 
-	// [shape my opponent chose][shape points i would get for loss, draw, win]
+	// [shape my opponent chose][shapePoints i would get for loss, draw, win]
 	twoD := [3][3]int{{3, 1, 2}, {1, 2, 3}, {2, 3, 1}}
 	total := 0
 
