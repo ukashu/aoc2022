@@ -30,7 +30,8 @@ func main() {
 	for scanner.Scan() {
 		moves := scanner.Text()
 		myMove := moves[2] - 88
-		total += twoD[1][myMove]
+		oppMove := moves[0] - 65
+		total += twoD[oppMove][myMove]
 		total += int(myMove) + 1
 	}
 
