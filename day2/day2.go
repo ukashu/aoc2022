@@ -22,7 +22,8 @@ func main() {
 	check(err)
 	defer file.Close()
 
-	twoD := [3][3]int{{3, 6, 0}, {0, 3, 6}, {6, 0, 3}}
+	// [shape my opponent chose][shape points i would get for loss, draw, win]
+	twoD := [3][3]int{{3, 1, 2}, {1, 2, 3}, {2, 3, 1}}
 	total := 0
 
 	scanner := bufio.NewScanner(file)
@@ -32,7 +33,7 @@ func main() {
 		myMove := moves[2] - 88
 		oppMove := moves[0] - 65
 		total += twoD[oppMove][myMove]
-		total += int(myMove) + 1
+		total += int(myMove) * 3 // points for loss/draw/win
 	}
 
 	log.Print(total)
